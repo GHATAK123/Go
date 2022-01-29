@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
 )
 
 func main() {
@@ -172,16 +173,16 @@ func main() {
 	}
 	fmt.Println(err)
 
-	// Get User Permission FunctionCode
-	// r, err := http.NewRequest("GET", "", nil)
-	// fmt.Println(r)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-	// r.Header.Set(
-	// 	"User-Permissions",
-	// 	"eyJncm91cHMiOlt7ImlkIjpudWxsLCJuYW1lIjoiU0NNRkxPV0NvbnNpZ25lZSIsImRlc2NyaXB0aW9uIjpudWxsLCJyb2xlcyI6W3siaWQiOm51bGwsIm5hbWUiOiJTQ01GTE9XQ29uc2lnbmVlIiwiYXBwbGljYXRpb25OYW1lIjoiU0NNIEFFQyIsImFwcGxpY2F0aW9uSWQiOjB9XX1dLCJjb21wYW5pZXMiOlt7ImlkIjowLCJiZUNvZGUiOiJFRUNPSkxBIiwiY291bnRyeUNvZGUiOiJVUyIsImZ1bmN0aW9uQ29kZSI6IkhRIiwidHlwZSI6IkNvbnNpZ25lZSIsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfSx7ImlkIjowLCJiZUNvZGUiOiJMRUdBQ1lGVSIsImNvdW50cnlDb2RlIjoiVVMiLCJmdW5jdGlvbkNvZGUiOiJIRUFEUSIsInR5cGUiOm51bGwsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfSx7ImlkIjowLCJiZUNvZGUiOiJUSU1CRVIiLCJjb3VudHJ5Q29kZSI6IlZOIiwiZnVuY3Rpb25Db2RlIjoiVkRSIiwidHlwZSI6IlNoaXBwZXIiLCJuYW1lIjpudWxsLCJyZWxhdGVkQ29tcGFuaWVzIjpbXX0seyJpZCI6MCwiYmVDb2RlIjoiVE9DQ0xURCIsImNvdW50cnlDb2RlIjoiVk4iLCJmdW5jdGlvbkNvZGUiOiJWRFIiLCJ0eXBlIjoiU2hpcHBlciIsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfSx7ImlkIjowLCJiZUNvZGUiOiJKWkhGQ0wyMyIsImNvdW50cnlDb2RlIjoiQ04iLCJmdW5jdGlvbkNvZGUiOiJWRFIiLCJ0eXBlIjoiU2hpcHBlciIsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfV0sInVzZXJJbmZvIjp7ImlkIjowLCJmaXJzdE5hbWUiOiJOc2NwIiwibGFzdE5hbWUiOiJGbG93Q29uc2lnbmVlIiwiZW1haWwiOiJhYmhpc2hlay5zb25pMDhAaG90bWFpbC5jb20iLCJ1c2VyTmFtZSI6Im5zY3BmbG93Y29uc2lnbmVlIiwidXNlclR5cGUiOiJleHRlcm5hbCJ9fQ==",
-	// )
+	//Get User Permission FunctionCode
+	r, err := http.NewRequest("GET", "", nil)
+	fmt.Println(r)
+	if err != nil {
+		fmt.Println(err)
+	}
+	r.Header.Set(
+		"User-Permissions",
+		"eyJncm91cHMiOlt7ImlkIjpudWxsLCJuYW1lIjoiU0NNRkxPV0NvbnNpZ25lZSIsImRlc2NyaXB0aW9uIjpudWxsLCJyb2xlcyI6W3siaWQiOm51bGwsIm5hbWUiOiJTQ01GTE9XQ29uc2lnbmVlIiwiYXBwbGljYXRpb25OYW1lIjoiU0NNIEFFQyIsImFwcGxpY2F0aW9uSWQiOjB9XX1dLCJjb21wYW5pZXMiOlt7ImlkIjowLCJiZUNvZGUiOiJFRUNPSkxBIiwiY291bnRyeUNvZGUiOiJVUyIsImZ1bmN0aW9uQ29kZSI6IkhRIiwidHlwZSI6IkNvbnNpZ25lZSIsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfSx7ImlkIjowLCJiZUNvZGUiOiJMRUdBQ1lGVSIsImNvdW50cnlDb2RlIjoiVVMiLCJmdW5jdGlvbkNvZGUiOiJIRUFEUSIsInR5cGUiOm51bGwsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfSx7ImlkIjowLCJiZUNvZGUiOiJUSU1CRVIiLCJjb3VudHJ5Q29kZSI6IlZOIiwiZnVuY3Rpb25Db2RlIjoiVkRSIiwidHlwZSI6IlNoaXBwZXIiLCJuYW1lIjpudWxsLCJyZWxhdGVkQ29tcGFuaWVzIjpbXX0seyJpZCI6MCwiYmVDb2RlIjoiVE9DQ0xURCIsImNvdW50cnlDb2RlIjoiVk4iLCJmdW5jdGlvbkNvZGUiOiJWRFIiLCJ0eXBlIjoiU2hpcHBlciIsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfSx7ImlkIjowLCJiZUNvZGUiOiJKWkhGQ0wyMyIsImNvdW50cnlDb2RlIjoiQ04iLCJmdW5jdGlvbkNvZGUiOiJWRFIiLCJ0eXBlIjoiU2hpcHBlciIsIm5hbWUiOm51bGwsInJlbGF0ZWRDb21wYW5pZXMiOltdfV0sInVzZXJJbmZvIjp7ImlkIjowLCJmaXJzdE5hbWUiOiJOc2NwIiwibGFzdE5hbWUiOiJGbG93Q29uc2lnbmVlIiwiZW1haWwiOiJhYmhpc2hlay5zb25pMDhAaG90bWFpbC5jb20iLCJ1c2VyTmFtZSI6Im5zY3BmbG93Y29uc2lnbmVlIiwidXNlclR5cGUiOiJleHRlcm5hbCJ9fQ==",
+	)
 	// b64EncodedUserPermissions := r.Header.Get("User-Permissions")
 	// fmt.Println(b64EncodedUserPermissions)
 	// userPermissions, err := base64.StdEncoding.DecodeString(b64EncodedUserPermissions)
@@ -198,23 +199,23 @@ func main() {
 	// 	fmt.Println(err)
 	// }
 
-	// Get User role function
-	// roles := []UserRole{
-	// 	{"SCM System Admin", 1, false},
-	// 	{"SCM Origin Customer Service Admin", 2, false},
-	// 	{"SCMFlowCustomerService", 3, false},
-	// 	{"SCM System Viewer", 4, false},
-	// 	{"SCMShipper", 5, true},
-	// 	{"SCMConsignee", 5, false},
-	// 	{"SCMFLOWShipper", 5, true},
-	// 	{"SCMFLOWConsignee", 5, false},
-	// }
-	// fmt.Println(roles) // Array of Object
-	// ur := UserRole{Priority: 10}
-	// fmt.Println(ur)
-	// for _, r := range roles {
-	// 	fmt.Println(r.Name)
-	// }
-	// Get Parties function
+	//Get User role function
+	roles := []UserRole{
+		{"SCM System Admin", 1, false},
+		{"SCM Origin Customer Service Admin", 2, false},
+		{"SCMFlowCustomerService", 3, false},
+		{"SCM System Viewer", 4, false},
+		{"SCMShipper", 5, true},
+		{"SCMConsignee", 5, false},
+		{"SCMFLOWShipper", 5, true},
+		{"SCMFLOWConsignee", 5, false},
+	}
+	fmt.Println(roles) // Array of Object
+	ur := UserRole{Priority: 10}
+	fmt.Println(ur)
+	for _, r := range roles {
+		fmt.Println(r.Name)
+	}
+	//Get Parties function
 
 }
