@@ -216,6 +216,5 @@ func main() {
 	for _, r := range roles {
 		fmt.Println(r.Name)
 	}
-	//Get Parties function
 
 }
