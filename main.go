@@ -17,7 +17,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(intro)
+	defer fmt.Println("This will print in last because of defer: ", intro)
 	// String To Int conversion
 	rating := "45"
 	numRating, err := strconv.ParseInt(rating, 10, 64)
@@ -71,9 +71,33 @@ func main() {
 	// for {
 	// 	fmt.Printf("It will print Infinite times.\n")
 	// }
-	res := func(a, b int) int { // Anonymous function
+	res := func(a, b int) int { // Anonymous function In Go
 		return a * b
 	}(4, 5)
 	fmt.Println(res)
+
+	if num := 5; num < 10 {
+		fmt.Println("Num is less than 10")
+	} else {
+		fmt.Println("Num is greater than 10")
+	}
+	// Random Number Generator
+	dice := random()
+	fmt.Println(dice)
+
+	Variadic := func(values ...int) int { // Variadic Functions in Go
+		total := 0
+		for _, v := range values {
+			total += v
+		}
+		return total
+	}(4, 5, 4, 7, 8, 6, 4)
+	fmt.Println(Variadic)
+	// File Write In Go
+	writeFile(intro)
+	// Read File In GO
+	readFile("./writeFile.txt")
+	// Defer in Go
+	myDefer()
 
 }
