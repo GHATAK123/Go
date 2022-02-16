@@ -1,4 +1,4 @@
-package unitTesting
+package testing
 
 func Add(x, y int) int {
 	return x + y

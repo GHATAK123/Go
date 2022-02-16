@@ -1,0 +1,12 @@
+go version  //print Go version
+go mod init {#packageName}      
+go run main.go 
+GOOS="windows"/"linux"/"darwin" go build  // compile packages and dependencies  
+go build main.go 
+go run .
+go test xxx_test.go 
+go test .
+go run GOPATH // To check path where it's installed.
+go get {#url} // add dependencies to current module and install them
+go clean // remove object files and cached files 
+go list // list packages or modules

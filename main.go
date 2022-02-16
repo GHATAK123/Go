@@ -1,10 +1,37 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"time"
 )
 
 func main() {
+	// Taking Input In Go
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Tell me about you?")
+	intro, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(intro)
+	// String To Int conversion
+	rating := "45"
+	numRating, err := strconv.ParseInt(rating, 10, 64)
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		numRating += 1
+		fmt.Println("numRating", numRating)
+	}
+	// Handling Time In Go
+	currentTime := time.Now()
+	fmt.Println(currentTime.Format("02-01-2006 15:04:05 Monday"))
+	createdTime := time.Date(2022, time.February, 16, 10, 10, 10, 10, time.UTC)
+	fmt.Println(createdTime.Format("02-01-2006 15:04:05 Monday"))
 	// Initializing the values
 	// of the author structure
 	result := author{"Sona", "CSE", 203, 34000}
