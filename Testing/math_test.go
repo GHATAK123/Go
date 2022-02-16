@@ -1,4 +1,4 @@
-package unitTesting
+package main
 
 import (
 	"fmt"
