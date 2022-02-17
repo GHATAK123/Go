@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+const myUrl = "http://dummy.restapiexample.com/api/v1/employee/1"
+
 func main() {
 	// Taking Input In Go
 	reader := bufio.NewReader(os.Stdin)
@@ -71,6 +73,14 @@ func main() {
 	// for {
 	// 	fmt.Printf("It will print Infinite times.\n")
 	// }
+
+	// Handling Get Call In GO
+	makeGet(myUrl)
+	GetApi()
+	PostApi()
+	PostApiWithFormPayload()
+	// Url Handling
+	urlHandler(myUrl)
 	res := func(a, b int) int { // Anonymous function In Go
 		return a * b
 	}(4, 5)
