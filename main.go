@@ -75,10 +75,10 @@ func main() {
 	// }
 
 	// Handling Get Call In GO
-	makeGet(myUrl)
-	GetApi()
-	PostApi()
-	PostApiWithFormPayload()
+	// makeGet(myUrl)
+	// GetApi()
+	// PostApi()
+	// PostApiWithFormPayload()
 	// Url Handling
 	urlHandler(myUrl)
 	res := func(a, b int) int { // Anonymous function In Go
@@ -91,6 +91,10 @@ func main() {
 	} else {
 		fmt.Println("Num is greater than 10")
 	}
+	// Json Encoding In Go
+	EncodeJson()
+	// Json Decoding In Go
+	JSONDecode()
 	// Random Number Generator
 	dice := random()
 	fmt.Println(dice)
