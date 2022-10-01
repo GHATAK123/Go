@@ -93,6 +93,8 @@ func main() {
 	}
 	// Json Encoding In Go
 	EncodeJson()
+	//Json Encoding for student model
+	EncodeStudentJson()
 	// Json Decoding In Go
 	JSONDecode()
 	// Random Number Generator
