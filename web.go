@@ -47,6 +47,29 @@ type course struct {
 	Password string   `json:"-"`
 	Tags     []string `json:"tags,omitempty"`
 }
+type student struct {
+	Name     string `json:"Name"`
+	Class    integer
+	RollNo   integer   `json:"RollNo"`
+	TotalCourseOwned integer   `json:"-"`
+	Tags     []string `json:"tags,omitempty"`
+}
+
+func EncodeStudentJson() {
+	myStudent := []course{
+		{"Parth Gaurav", 12,45, []string{"webdev", "fullstack", "js"}},
+		{"Ashish Anand", 11,23, []string{"mobileDev", "backend", "Angular"}},
+		{"Prakash Anand", 09,15, []string{"webdev", "ui", "flutter"}}
+	}
+
+	// finalJson, err := json.Marshal(myCourse)
+	updatedJson, err := json.MarshalIndent(myCourse, "", "\t")
+	if err != nil {
+		panic(err)
+	}
+	// fmt.Printf("%s\n", finalJson)
+	fmt.Println(string(updatedJson))
+}
 
 // Json Encoding
 func EncodeJson() {
